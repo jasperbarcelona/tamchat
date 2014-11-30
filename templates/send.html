@@ -1,0 +1,9 @@
+<html>
+	{% for a in messages %}
+	<div class="indivMessage">
+		<span class="sender">{{a.sender}}:</span>
+		<span class="message">{{a.message}}</span><br>
+		<span class="created">{{a.created_at}}</span><br>
+	</div>
+	{% endfor %}
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+	<div id="container">
+		<nav class="navbar navbar-inverse" role="navigation">
+	  		<div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">TamChat</a>
+			    </div>
+
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			    	<form class="navbar-form navbar-left" role="search">
+				        <div class="form-group">
+				        	<input type="text" class="form-control" placeholder="Search Conversations" onchange=post13()>
+				        </div>
+			      	</form>
+			 	</div>
+		 	</div>
+  		</nav>
+
+  		<div id="convoTest" class="convo">
+  			{% for a in messages %}
+  			<div class="indivMessage">
+	  			<span class="sender">{{a.sender}}:</span>
+	  			<span class="message">{{a.message}}</span><br>
+	  			<span class="created">{{a.created_at}}</span><br>
+	  		</div>
+  			{% endfor %}
+  		</div>
+
+  		<div id="textTest" class="textContainer">
+  			<textarea id="text" class="textBox" onclick="removeTextAreaWhiteSpace()">
+  			</textarea>
+  			<button type="button" class="btn btn-danger" id="sendTest" onclick="send()">Send</button>
+  		</div>
+
+	</div>
+
+	<script src="../static/js/jquery-1.11.0.min.js"></script>
+	<script src="../static/js/animations.js"></script>
+	<script src="../static/js/jquery-ui.js"></script>
+	<script src="../static/js/jquery-ui.min.js"></script>
+	<script src="../static/js/functions.js"></script>
+</body>
+</html>
